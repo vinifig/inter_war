@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:interunesp_war/routes/routes.dart';
+import 'package:interunesp_war/services/services.dart';
 import 'package:interunesp_war/theme/theme.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -12,16 +13,23 @@ Future<void> main() async {
   }, (Object error, StackTrace stack) {});
 }
 
-class InterUnespWar extends StatefulWidget {
+class InterUnespWar extends StatelessWidget {
   const InterUnespWar({
     Key? key,
   }) : super(key: key);
 
-  @override
-  InterUnespWarState createState() => InterUnespWarState();
-}
+  Future<void> initializeApp() async {
+    final hasUser = await UserService(
+      storageService: StorageService(),
+    ).hasUser();
+    if (!hasUser) {
+      print('navigating');
+      await Future.delayed(const Duration(seconds: 5));
+      navigatorKey.currentState!
+          .pushNamedAndRemoveUntil(setupRoute, (_) => false);
+    }
+  }
 
-class InterUnespWarState extends State<InterUnespWar> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
