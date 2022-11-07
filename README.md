@@ -2,7 +2,9 @@
 > Um projeto base para quem quiser curtir um warzinho no inter poder salvar/calcular e comparar com seus amigos online
 
 # Disclaimer
-Comecei o projeto muito tarde, minha cabeça tem 50 mil jeitos de fazer esse app e o futuro backend dele. A abordagem que vou seguir não é do meu agrado mas é a que vai me economizar mais tempo. Talvez no futuro eu volte aqui para melhorar. Mas deixo aberto também para nossa comunidade incrível contribuir e abrir pull requests/issues aqui :heart:
+
+1. Comecei o projeto muito tarde, minha cabeça tem 50 mil jeitos de fazer esse app e o futuro backend dele. A abordagem que vou seguir não é do meu agrado mas é a que vai me economizar mais tempo. Talvez no futuro eu volte aqui para melhorar. Mas deixo aberto também para nossa comunidade incrível contribuir e abrir pull requests/issues aqui :heart:
+2. Estes primeiros commits estão sendo feitos após uma noite virada de insonia, então esse documento é só para me organizar e me guiar #pas
 
 # Rodando
 To com pressa, dps volto aqui, mas é só seguir um tutorial de como iniciar um projeto flutter e GG!
