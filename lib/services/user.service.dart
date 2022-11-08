@@ -13,8 +13,12 @@ class UserService {
 
   final StorageService storageService;
 
-  Future<void> update(User user) async {
-    return storageService.set(userDataKey, jsonEncode(user.toJson()));
+  Future<void> update(User? user) {
+    return storageService.set(userDataKey, jsonEncode(user?.toJson()));
+  }
+
+  Future<void> logout() {
+    return storageService.remove(userDataKey);
   }
 
   Future<User?> get() async {

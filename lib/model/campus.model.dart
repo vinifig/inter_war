@@ -1,11 +1,30 @@
 enum Campus {
-  bauru, // <3
-  none
+  araraquara,
+  assis,
+  bauru,
+  botucatu,
+  dracena,
+  franca,
+  guaratingueta,
+  ilhaSolteira,
+  itapeva,
+  jaboticabal,
+  marilia,
+  ourinhos,
+  presidentePrudente,
+  registro,
+  rioClaro,
+  rosana,
+  saoJoaoDaBoaVista,
+  saoJoseDoRioPreto,
+  saoJoseDosCampos,
+  saoPaulo,
+  saoVicente,
+  sorocaba,
+  tupa,
+  outro,
 }
 
 extension CampusMethods on Campus {
   String get value => toString().split(".")[1];
 }
-
-final List<String> campusesValues =
-    Campus.values.map((campus) => campus.toString().split(".")[1]).toList();

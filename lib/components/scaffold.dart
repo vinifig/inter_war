@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:inter_war/routes/routes.dart';
 
 class WarScaffold extends StatelessWidget {
   const WarScaffold({
@@ -7,6 +8,7 @@ class WarScaffold extends StatelessWidget {
     this.title = "War Inter 2022",
     this.padding = const EdgeInsets.all(15.0),
     this.withAppBar = true,
+    this.canNavigateToAddKiss = false,
     Key? key,
   }) : super(key: key);
 
@@ -14,6 +16,7 @@ class WarScaffold extends StatelessWidget {
   final String title;
   final EdgeInsetsGeometry padding;
   final bool withAppBar;
+  final bool canNavigateToAddKiss;
 
   bool isIOS() => defaultTargetPlatform == TargetPlatform.iOS;
 
@@ -33,6 +36,10 @@ class WarScaffold extends StatelessWidget {
     );
   }
 
+  void _navigateToKissScreen(BuildContext context) {
+    Navigator.of(context).pushNamed(Routes.addKiss);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +49,26 @@ class WarScaffold extends StatelessWidget {
               elevation: isIOS() ? 0.2 : 2,
               centerTitle: isIOS(),
               title: _getTitle(context),
+              actions: [
+                if (canNavigateToAddKiss)
+                  IconButton(
+                    onPressed: () => _navigateToKissScreen(context),
+                    icon: const Icon(
+                      Icons.add,
+                    ),
+                  )
+              ],
             )
           : null,
       body: _getBody(),
+      floatingActionButton: canNavigateToAddKiss
+          ? FloatingActionButton(
+              onPressed: () => _navigateToKissScreen(context),
+              tooltip: 'Cadastrar beijo',
+              child: const Icon(Icons.add),
+              backgroundColor: Colors.green,
+            )
+          : null,
     );
   }
 }

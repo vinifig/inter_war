@@ -14,7 +14,6 @@ final _primarySwatch = <int, Color>{
   900: const Color.fromRGBO(3, 147, 221, 1),
 };
 final _primaryMt = MaterialColor(_primary.value, _primarySwatch);
-const _fontColor = Colors.grey;
 
 const _bodyFontSize = 16.0;
 const _titleFontSize = 24.0;
@@ -26,15 +25,7 @@ class WarTheme {
       primaryColor: _primary,
       primarySwatch: _primaryMt,
       scaffoldBackgroundColor: Colors.white,
-      appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.white,
-        titleTextStyle: TextStyle(
-          color: _fontColor,
-          fontWeight: FontWeight.bold,
-        ),
-        centerTitle: false,
-        actionsIconTheme: IconThemeData(color: _fontColor),
-      ),
+      fontFamily: "Roboto",
       textTheme: const TextTheme(
         bodyText1: TextStyle(
           color: _primary,
@@ -44,6 +35,7 @@ class WarTheme {
         headline1: TextStyle(
           color: Colors.white,
           fontSize: _titleFontSize,
+          fontWeight: FontWeight.w400,
         ),
         headline2: TextStyle(
           fontSize: _subTitleFontSize,

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:inter_war/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -18,6 +20,8 @@ class Kiss {
   String timestamp;
   Campus campus;
   List<Trait> traits;
+
+  int get points => Random().nextInt(500);
 
   Map<String, dynamic> toJson() => _$KissToJson(this);
 }

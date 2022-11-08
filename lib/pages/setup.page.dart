@@ -32,14 +32,17 @@ class Setup extends StatelessWidget {
         ),
       );
 
-  CampusInput _getCampusInput() {
-    return CampusInput(
-      controller: campusController,
-      label: "Selecione seu campus:",
+  Widget _getCampusInput() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: CampusInput(
+        controller: campusController,
+        label: "Selecione seu campus:",
+      ),
     );
   }
 
-  Padding _getNameInput() => Padding(
+  Widget _getNameInput() => Padding(
         padding: const EdgeInsets.only(bottom: 8.0),
         child: TextInput(
           label: "Como devemos te chamar?",
@@ -69,7 +72,7 @@ class Setup extends StatelessWidget {
 
   Future<void> _confirm(BuildContext context) async {
     if (nameController.text == "") {
-      return _showFailureMessage(context, "Nome");
+      return _showFailureMessage(context, "Apelido");
     }
 
     if (campusController.value == null) {

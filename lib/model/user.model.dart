@@ -23,4 +23,6 @@ class User {
   List<Kiss> kisses;
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
+
+  int get points => kisses.fold(0, (points, kiss) => points + kiss.points);
 }
