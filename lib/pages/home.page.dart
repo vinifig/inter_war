@@ -27,7 +27,6 @@ class Home extends StatelessWidget {
     goToSetupIfNeeded(context);
     return const WarScaffold(
       child: Text("Hello, World!"),
-      title: "home",
     );
   }
 }

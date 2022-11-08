@@ -11,5 +11,7 @@ final warRoutes = <String, Widget Function(BuildContext)>{
   Routes.home: (BuildContext context) => Home(
         userService: UserService.base(),
       ),
-  Routes.setup: (BuildContext context) => const Setup(),
+  Routes.setup: (BuildContext context) => Setup(
+        userService: UserService.base(),
+      ),
 };
