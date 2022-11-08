@@ -1,3 +1,3 @@
-export 'campus.dart';
-export 'kiss.dart';
-export 'user.dart';
+export 'campus.model.dart';
+export 'kiss.model.dart';
+export 'user.model.dart';

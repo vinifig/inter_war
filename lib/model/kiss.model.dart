@@ -1,7 +1,7 @@
 import 'package:interunesp_war/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'kiss.g.dart';
+part 'kiss.model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Kiss {

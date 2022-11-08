@@ -1,2 +1,2 @@
-export 'storage/storage.dart';
-export 'user/user.dart';
+export 'storage.service.dart';
+export 'user.service.dart';

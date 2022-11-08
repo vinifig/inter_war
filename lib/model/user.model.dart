@@ -1,7 +1,7 @@
 import 'package:interunesp_war/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'user.g.dart';
+part 'user.model.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class User {
