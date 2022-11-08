@@ -7,6 +7,9 @@ const userDataKey = "K_USER_DATA";
 
 class UserService {
   const UserService({required this.storageService});
+  factory UserService.base() {
+    return UserService(storageService: StorageService());
+  }
 
   final StorageService storageService;
 
