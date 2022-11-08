@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interunesp_war/components/components.dart';
+import 'package:inter_war/components/components.dart';
 
 class Setup extends StatelessWidget {
   const Setup({Key? key}) : super(key: key);
@@ -7,8 +7,7 @@ class Setup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const WarScaffold(
-      child:
-          Text("Parabéns, agora você está participando do War do Interunesp"),
+      child: Text("Parabéns, agora você está participando do War do Inter"),
       title: "Configuração",
     );
   }

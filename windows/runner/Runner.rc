@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "interunesp_war" "\0"
+            VALUE "FileDescription", "inter_war" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "interunesp_war" "\0"
+            VALUE "InternalName", "inter_war" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "interunesp_war.exe" "\0"
-            VALUE "ProductName", "interunesp_war" "\0"
+            VALUE "OriginalFilename", "inter_war.exe" "\0"
+            VALUE "ProductName", "inter_war" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

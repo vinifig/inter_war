@@ -1,4 +1,4 @@
-# Interunesp War
+# Inter War
 > Um projeto base para quem quiser curtir um warzinho no inter poder salvar/calcular e comparar com seus amigos online
 
 # Disclaimer

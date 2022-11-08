@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:interunesp_war/pages/pages.dart';
-import 'package:interunesp_war/services/services.dart';
+import 'package:inter_war/pages/pages.dart';
+import 'package:inter_war/services/services.dart';
 
 class Routes {
   static const home = "/";

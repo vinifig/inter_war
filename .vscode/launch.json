@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "interunesp_war",
+            "name": "inter_war",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "interunesp_war (debug mode)",
+            "name": "inter_war (debug mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug"
         }
         {
-            "name": "interunesp_war (profile mode)",
+            "name": "inter_war (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

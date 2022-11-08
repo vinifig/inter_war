@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.interunesp_war">
+    package="com.example.inter_war">
    <application
-        android:label="interunesp_war"
+        android:label="inter_war"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

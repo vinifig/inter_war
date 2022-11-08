@@ -1,19 +1,19 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:interunesp_war/routes/routes.dart';
-import 'package:interunesp_war/theme/theme.dart';
+import 'package:inter_war/routes/routes.dart';
+import 'package:inter_war/theme/theme.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future<void> main() async {
   runZonedGuarded(() {
-    runApp(const InterUnespWar());
+    runApp(const InterWar());
   }, (Object error, StackTrace stack) {});
 }
 
-class InterUnespWar extends StatelessWidget {
-  const InterUnespWar({
+class InterWar extends StatelessWidget {
+  const InterWar({
     Key? key,
   }) : super(key: key);
 

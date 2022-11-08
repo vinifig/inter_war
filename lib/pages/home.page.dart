@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:interunesp_war/components/components.dart';
-import 'package:interunesp_war/routes/routes.dart';
-import 'package:interunesp_war/services/services.dart';
+import 'package:inter_war/components/components.dart';
+import 'package:inter_war/routes/routes.dart';
+import 'package:inter_war/services/services.dart';
 
 class Home extends StatelessWidget {
   const Home({

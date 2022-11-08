@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:interunesp_war/model/model.dart';
-import 'package:interunesp_war/services/services.dart';
+import 'package:inter_war/model/model.dart';
+import 'package:inter_war/services/services.dart';
 
 const userDataKey = "K_USER_DATA";
 

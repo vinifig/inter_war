@@ -1,4 +1,4 @@
-import 'package:interunesp_war/model/model.dart';
+import 'package:inter_war/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'kiss.model.g.dart';

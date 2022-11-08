@@ -1,6 +1,6 @@
 {
-    "name": "interunesp_war",
-    "short_name": "interunesp_war",
+    "name": "inter_war",
+    "short_name": "inter_war",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
