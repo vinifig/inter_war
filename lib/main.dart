@@ -23,7 +23,7 @@ class InterUnespWar extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'War Inter',
       theme: WarTheme.lightTheme,
-      initialRoute: homeRoute,
+      initialRoute: Routes.home,
       routes: warRoutes,
     );
   }

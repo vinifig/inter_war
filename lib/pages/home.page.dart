@@ -15,7 +15,10 @@ class Home extends StatelessWidget {
     final hasUser = await userService.hasUser();
 
     if (!hasUser) {
-      Navigator.of(context).pushNamedAndRemoveUntil(setupRoute, (_) => false);
+      Navigator.of(context).pushNamedAndRemoveUntil(
+        Routes.setup,
+        (_) => false,
+      );
     }
   }
 
