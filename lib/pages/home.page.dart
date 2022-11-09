@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
             ),
           SizedBox(
             width: double.infinity,
-            child: TextButton(
+            child: ElevatedButton(
               onPressed: () {
                 if (loggingOut) {
                   widget.userService.logout();
@@ -134,21 +134,26 @@ class _HomeState extends State<Home> {
                   loggingOut = true;
                 });
               },
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red)),
               child: Text(
                 loggingOut ? "Sim" : "Sair",
-                style: const TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ),
           if (loggingOut)
             Center(
-              child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    loggingOut = false;
-                  });
-                },
-                child: const Text("Cancelar"),
+              child: SizedBox(
+                width: double.infinity,
+                child: OutlinedButton(
+                  onPressed: () {
+                    setState(() {
+                      loggingOut = false;
+                    });
+                  },
+                  child: const Text("Cancelar"),
+                ),
               ),
             )
         ],
@@ -161,7 +166,10 @@ class _HomeState extends State<Home> {
       children: [
         _getTitle(),
         _getPoints(),
-        const Spacer(),
+        // TODO: fazer algo tipo: const Spacer(), -- n funciona pq scrollview é infinito
+        const SizedBox(
+          height: 50.0,
+        ),
         _getLogout(),
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +181,7 @@ class _HomeState extends State<Home> {
     goToSetupIfNeeded(context);
 
     return WarScaffold(
-      child: _getHomeContent(context),
+      child: SingleChildScrollView(child: _getHomeContent(context)),
       canNavigateToAddKiss: true,
     );
   }

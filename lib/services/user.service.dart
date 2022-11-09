@@ -29,8 +29,14 @@ class UserService {
     return User.fromJson(jsonDecode(persistedUserJson));
   }
 
-  Future<bool> hasUser() async {
+  Future<void> addKiss(Kiss kiss) async {
     final user = await get();
-    return user != null;
+    if (user != null) {
+      user.kisses.add(kiss);
+
+      return await update(user);
+    }
+
+    throw "user does not exists";
   }
 }
