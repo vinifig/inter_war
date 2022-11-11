@@ -11,6 +11,7 @@ class Kiss {
     required this.campus,
     this.id,
     this.traits = const [],
+    this.metadata = "",
   });
 
   factory Kiss.fromJson(Map<String, dynamic> json) => _$KissFromJson(json);
@@ -19,6 +20,7 @@ class Kiss {
   String timestamp;
   Campus campus;
   List<String> traits;
+  String? metadata;
 
   int _getTraitPoints() {
     final traitPoints = Trait.values.entries

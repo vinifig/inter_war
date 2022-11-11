@@ -107,57 +107,65 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _getLogout() {
+  Widget _getActions() {
     const logoutMessage = "Tem certeza? Os beijos serão esquecidos. 😭😭😭";
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 32.0),
-      child: Column(
-        children: [
-          if (loggingOut)
-            const Text(
-              logoutMessage,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+    return Column(
+      children: [
+        if (loggingOut)
+          const Text(
+            logoutMessage,
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(Routes.listKisses);
+            },
+            child: const Text(
+              "Ver detalhes",
             ),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                if (loggingOut) {
-                  widget.userService.logout();
+          ),
+        ),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () {
+              if (loggingOut) {
+                widget.userService.logout();
+                setState(() {
+                  loggingOut = false;
+                });
+                return;
+              }
+              setState(() {
+                loggingOut = true;
+              });
+            },
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red)),
+            child: Text(
+              loggingOut ? "Sim" : "Sair",
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+        if (loggingOut)
+          Center(
+            child: SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {
                   setState(() {
                     loggingOut = false;
                   });
-                  return;
-                }
-                setState(() {
-                  loggingOut = true;
-                });
-              },
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red)),
-              child: Text(
-                loggingOut ? "Sim" : "Sair",
-                style: const TextStyle(color: Colors.white),
+                },
+                child: const Text("Cancelar"),
               ),
             ),
-          ),
-          if (loggingOut)
-            Center(
-              child: SizedBox(
-                width: double.infinity,
-                child: OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      loggingOut = false;
-                    });
-                  },
-                  child: const Text("Cancelar"),
-                ),
-              ),
-            )
-        ],
-      ),
+          )
+      ],
     );
   }
 
@@ -170,7 +178,7 @@ class _HomeState extends State<Home> {
         const SizedBox(
           height: 50.0,
         ),
-        _getLogout(),
+        _getActions(),
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
     );

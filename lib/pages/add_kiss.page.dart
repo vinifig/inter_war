@@ -13,6 +13,7 @@ class AddKiss extends StatelessWidget {
   final UserService userService;
   final CampusController _campusController = CampusController(null);
   final TraitsController _traitsController = TraitsInput.createController();
+  final TextEditingController _metadataController = TextEditingController();
 
   Widget _getCampusInput() {
     return CampusInput(
@@ -41,11 +42,13 @@ class AddKiss extends StatelessWidget {
   Future<void> _addKiss(BuildContext context) async {
     if (_campusController.value == null) {
       _showFailureMessage(context, "Campus");
+      return;
     }
 
     final kiss = Kiss(
-      timestamp: '',
+      timestamp: DateTime.now().toString(),
       campus: _campusController.value!,
+      metadata: _metadataController.text,
       traits: _traitsController.entries
           .where((element) => element.value)
           .map((element) => element.key)
@@ -66,11 +69,19 @@ class AddKiss extends StatelessWidget {
     );
   }
 
+  Widget _getMetadataInput() {
+    return TextInput(
+      controller: _metadataController,
+      label: "Adicione informações de contato",
+    );
+  }
+
   Widget _getForm(BuildContext context) {
     return Column(
       children: [
         _getCampusInput(),
         _getTraitsInput(),
+        _getMetadataInput(),
         _getAddInput(context),
       ],
       crossAxisAlignment: CrossAxisAlignment.start,
