@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:inter_war/model/kiss/points_strategy.dart';
 import 'package:inter_war/model/model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -21,7 +20,31 @@ class Kiss {
   Campus campus;
   List<String> traits;
 
-  int get points => Random().nextInt(500);
+  int _getTraitPoints() {
+    final traitPoints = Trait.values.entries
+        .where((traitPair) => traits.contains(traitPair.key))
+        .map((traitPair) => traitPair.value);
+    if (traitPoints.isEmpty) {
+      return 0;
+    }
+    return traitPoints.reduce((acc, cur) {
+      return acc + cur;
+    });
+  }
+
+  int _getStrategiesPoints(Campus userCampus) {
+    return PointsStrategy.strategies.map(
+      (strategy) {
+        return strategy.getPoints(userCampus, this);
+      },
+    ).reduce((acc, cur) {
+      return acc + cur;
+    });
+  }
+
+  int getPoints(Campus userCampus) {
+    return _getTraitPoints() + _getStrategiesPoints(userCampus);
+  }
 
   Map<String, dynamic> toJson() => _$KissToJson(this);
 }
@@ -36,5 +59,7 @@ class Trait {
     "Dinossauros da Unesp (<2011)": 500,
     "Poliatleta(4+)": 300,
     "Era o Mêw": 600,
+    "Formada": 100,
+    "Você casou :(": -20,
   };
 }

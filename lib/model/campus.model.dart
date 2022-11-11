@@ -22,6 +22,8 @@ enum Campus {
   saoVicente,
   sorocaba,
   tupa,
+  usp,
+  federal,
   outro,
 }
 

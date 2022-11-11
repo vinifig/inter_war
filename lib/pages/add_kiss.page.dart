@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inter_war/components/components.dart';
 import 'package:inter_war/model/model.dart';
-import 'package:inter_war/routes/routes.dart';
 import 'package:inter_war/services/user.service.dart';
 import 'package:inter_war/types/types.dart';
 
@@ -54,10 +53,7 @@ class AddKiss extends StatelessWidget {
     );
     await userService.addKiss(kiss);
 
-    Navigator.of(context).pushNamedAndRemoveUntil(
-      Routes.home,
-      (route) => false,
-    );
+    Navigator.of(context).pop();
   }
 
   Widget _getAddInput(BuildContext context) {
